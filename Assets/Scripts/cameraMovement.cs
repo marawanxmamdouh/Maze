@@ -1,16 +1,20 @@
 using UnityEngine;
-using System.Collections;
-public class CameraScript : MonoBehaviour
+
+public class cameraMovement : MonoBehaviour
 {
-    public GameObject Player;
-    private Vector3 cameraPosition;
-    void Start()
-    {
-        cameraPosition = this.transform.position;
-    }
-    // Execute After Movement's Palyer For Optimization
-    void LateUpdate()
-    {
-        this.transform.position = Player.transform.position + cameraPosition;
-    }
+
+	public Transform target;
+
+	public float smoothSpeed = 0.125f;
+	public Vector3 offset;
+
+	void FixedUpdate()
+	{
+		Vector3 desiredPosition = target.position + offset;
+		Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+		transform.position = smoothedPosition;
+
+		transform.LookAt(target);
+	}
+
 }
