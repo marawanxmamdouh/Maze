@@ -5,12 +5,16 @@ using UnityEngine;
 public class Button_1 : MonoBehaviour
 {
     public Transform btn;
-    public float moveSpeed = 10f;
+
+    public Vector3 targetPosition;
+    public float smoothFactor = 50;
+
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "player")
         {
-            btn.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+            btn.transform.position = Vector3.Lerp(btn.transform.position, targetPosition, Time.deltaTime * smoothFactor);
         }
     }
 }
