@@ -19,11 +19,11 @@ public class Button1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isUp)
-        {
-            upAnimator.Play("upAnmi",-1, 1f);
-            doorAnimator.Play("stage 2 door",-1, 1f);
-        }
+        // if (isUp)
+        // {
+        //     upAnimator.Play("upAnmi",-1, 1f);
+        //     doorAnimator.Play("stage 2 door",-1, 1f);
+        // }
         transform.Rotate(0.0f, (float)(6.0*rotationsPerMinute*Time.deltaTime),0f);
     }
     void OnCollisionEnter(Collision col)
@@ -33,6 +33,8 @@ public class Button1 : MonoBehaviour
             isUp = true;
             btn.transform.position = Vector3.Lerp(btn.transform.position, targetPosition, Time.deltaTime * smoothFactor);
             rotationsPerMinute = 0;
+            upAnimator.Play("upAnmi",-1, 1f);
+            doorAnimator.Play("stage 2 door",-1, 1f);
         }
     }
 }
