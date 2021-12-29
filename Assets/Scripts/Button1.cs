@@ -6,31 +6,31 @@ public class Button1 : MonoBehaviour
     public float smoothFactor = 50f;
     public float rotationsPerMinute = 10f;
     
-    public bool isUp = false;
     public Animator upAnimator;
     public Animator doorAnimator;
     
+    public GameObject up;
+    public GameObject door;
+    
+    // Start is called once when the game start
     void Start()
     {
-        upAnimator = GetComponent<Animator>();
-        doorAnimator = GetComponent<Animator>();
+        upAnimator = up.GetComponent<Animator>();
+        doorAnimator = door.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (isUp)
-        // {
-        //     upAnimator.Play("upAnmi",-1, 1f);
-        //     doorAnimator.Play("stage 2 door",-1, 1f);
-        // }
+        //Rotate Button1 
         transform.Rotate(0.0f, (float)(6.0*rotationsPerMinute*Time.deltaTime),0f);
     }
+    
+    //Run when Player Collide with Button1
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "player")
         {
-            isUp = true;
             btn.transform.position = Vector3.Lerp(btn.transform.position, targetPosition, Time.deltaTime * smoothFactor);
             rotationsPerMinute = 0;
             upAnimator.Play("upAnmi",-1, 1f);
