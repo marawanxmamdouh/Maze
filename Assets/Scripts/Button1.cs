@@ -33,8 +33,8 @@ public class Button1 : MonoBehaviour
         {
             btn.transform.position = Vector3.Lerp(btn.transform.position, targetPosition, Time.deltaTime * smoothFactor);
             rotationsPerMinute = 0;
-            upAnimator.Play("upAnmi",-1, 1f);
-            doorAnimator.Play("stage 2 door",-1, 1f);
+            upAnimator.Play("upAnmi");
+            doorAnimator.Play("stage 2 door");
         }
     }
 }
