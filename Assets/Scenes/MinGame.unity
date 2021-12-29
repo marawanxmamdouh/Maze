@@ -531,9 +531,10 @@ MonoBehaviour:
   targetPosition: {x: 7.25, y: 0.57, z: 29.3}
   smoothFactor: 50
   rotationsPerMinute: 10
-  isUp: 0
   upAnimator: {fileID: 1180950942}
   doorAnimator: {fileID: 1987082529}
+  up: {fileID: 1180950937}
+  door: {fileID: 1987082524}
 --- !u!1 &146142276
 GameObject:
   m_ObjectHideFlags: 0
