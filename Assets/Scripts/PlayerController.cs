@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static int lives = 3;
+    public static int score = 0;
+    
     public float speed = 0;
     private Rigidbody rb;
     private float movementX;

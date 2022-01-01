@@ -15,8 +15,8 @@ public class GameOverScreen : MonoBehaviour
         public void RestartButton()
         {
             SceneManager.LoadScene("MinGame");
-            GameOver.level = 3;
-            GameOver.score = 0;
+            PlayerController.lives = 3;
+            PlayerController.score = 0;
         }
         public void MainMenuButton()
         {
