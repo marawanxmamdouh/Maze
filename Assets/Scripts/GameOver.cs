@@ -2,12 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
     public GameObject player;
     public Vector3 playerPosition;
     public int level = 3;
+
+    public GameOverScreen gameOverScreen;
     
     // Start is called before the first frame update
     void Start()
@@ -20,7 +23,8 @@ public class GameOver : MonoBehaviour
         playerPosition = player.transform.position;
         if (level == 0)
         {
-            
+            gameOverScreen.Setup(33);
+            //SceneManager.LoadScene("GameOver");
         }
         if (playerPosition.y < 0)
         {

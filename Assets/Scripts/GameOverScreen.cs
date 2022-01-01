@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
-namespace DefaultNamespace
-{
-    public class GameOverScreen : MonoBehaviour
+public class GameOverScreen : MonoBehaviour
     {
         public Text scoreText;
 
@@ -13,4 +10,3 @@ namespace DefaultNamespace
             scoreText.text = score + " POINTS";
         } 
     }
-}
