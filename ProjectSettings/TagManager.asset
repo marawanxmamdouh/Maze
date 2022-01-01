@@ -10,6 +10,7 @@ TagManager:
   - Stage 4
   - Stage 5
   - Stage 6
+  - gem
   layers:
   - Default
   - TransparentFX
