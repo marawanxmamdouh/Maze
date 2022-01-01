@@ -8,7 +8,8 @@ public class GameOver : MonoBehaviour
 {
     public GameObject player;
     public Vector3 playerPosition;
-    public int level = 3;
+    public static int level = 3;
+    public static int score = 0;
 
     public GameOverScreen gameOverScreen;
     
@@ -23,7 +24,7 @@ public class GameOver : MonoBehaviour
         playerPosition = player.transform.position;
         if (level == 0)
         {
-            gameOverScreen.Setup(33);
+            gameOverScreen.Setup(score);
             //SceneManager.LoadScene("GameOver");
         }
         if (playerPosition.y < 0)
