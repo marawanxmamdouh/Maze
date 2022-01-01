@@ -3,12 +3,11 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
 	public GameObject player;
-	private Vector3 _offset;
+	private Vector3 _offset = new (0, 6, -5);
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		_offset = transform.position - player.transform.position;
 	}
 
 	// Update is called once per frame
