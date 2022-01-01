@@ -29,7 +29,7 @@ public class Button1 : MonoBehaviour
     //Run when Player Collide with Button1
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "player")
+        if (col.gameObject.name == "player" && PlayerController.score == 35)
         {
             btn.transform.position = Vector3.Lerp(btn.transform.position, targetPosition, Time.deltaTime * smoothFactor);
             rotationsPerMinute = 0;
