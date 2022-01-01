@@ -1,20 +1,19 @@
 using UnityEngine;
 
-public class cameraMovement : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
+	public GameObject player;
+	private Vector3 _offset;
 
-	public Transform target;
-
-	public float smoothSpeed = 0.125f;
-	public Vector3 offset;
-
-	void FixedUpdate()
+	// Start is called before the first frame update
+	void Start()
 	{
-		Vector3 desiredPosition = target.position + offset;
-		Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-		transform.position = smoothedPosition;
-
-		transform.LookAt(target);
+		_offset = transform.position - player.transform.position;
 	}
 
+	// Update is called once per frame
+	void LateUpdate()
+	{
+		transform.position = player.transform.position + _offset;
+	}
 }
