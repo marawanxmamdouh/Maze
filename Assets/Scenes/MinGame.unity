@@ -10909,8 +10909,9 @@ GameObject:
   - component: {fileID: 1743245592}
   - component: {fileID: 1743245591}
   - component: {fileID: 1743245590}
+  - component: {fileID: 1743245594}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10989,12 +10990,32 @@ Transform:
   m_GameObject: {fileID: 1743245589}
   m_LocalRotation: {x: -0.27059805, y: -0.27059805, z: 0.6532815, w: 0.6532815}
   m_LocalPosition: {x: -16.25, y: 1.25, z: 31.75}
-  m_LocalScale: {x: -0.8000001, y: 0.25, z: 0.75}
+  m_LocalScale: {x: 1.25, y: 0.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2141067392}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 90}
+--- !u!114 &1743245594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743245589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13f60d877314923a3124a9f42758f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btn: {fileID: 1743245593}
+  targetPosition: {x: -16, y: 1.25, z: 32}
+  smoothFactor: 50
+  rotationsPerMinute: 10
+  bridgeRightAnimator: {fileID: 1039041237}
+  bridgeLeftAnimator: {fileID: 1965536655}
+  bridgeRight: {fileID: 1039041232}
+  bridgeLeft: {fileID: 1965536650}
 --- !u!1 &1745810129
 GameObject:
   m_ObjectHideFlags: 0
