@@ -13,6 +13,7 @@ public class YouWinScreen : MonoBehaviour
         SceneManager.LoadScene("MinGame");
         PlayerController.lives = 3;
         PlayerController.score = 0;
+        PlayerController.canMove = true;
     }
     
     public void MainMenuButton()

@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public static int lives = 3;
     public static int score;
+    public static bool canMove = true;
 
     public float speed = 10;
     private Rigidbody _rb;
@@ -12,14 +13,15 @@ public class PlayerController : MonoBehaviour
     private float _vertical;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // Make Reference From Rigidbody
         _rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        if (!canMove) return;
         // Store Input From User 
         _horizontal = Input.GetAxis("Horizontal");
         _vertical = Input.GetAxis("Vertical");

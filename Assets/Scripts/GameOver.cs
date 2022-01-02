@@ -22,6 +22,7 @@ public class GameOver : MonoBehaviour
         playerPosition = player.transform.position;
         if (PlayerController.lives == 0)
         {
+            PlayerController.canMove = false;
             gameOverScreen.Setup(PlayerController.score);
             //SceneManager.LoadScene("GameOver");
         }

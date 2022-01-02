@@ -9,6 +9,7 @@ public class YouWin : MonoBehaviour
     {
         if (PlayerController.score == 50)
         {
+            PlayerController.canMove = false;
             youWinScreen.Setup();
         }
     }
