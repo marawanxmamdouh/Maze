@@ -21,7 +21,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!canMove) return;
+        if (!canMove)
+        {
+            transform.position = Vector3.Lerp(transform.position,new Vector3 (0.25f, 0.5f, 13f),1);
+            _rb.velocity = Vector3.zero;
+            return;
+        }
+
         // Store Input From User 
         _horizontal = Input.GetAxis("Horizontal");
         _vertical = Input.GetAxis("Vertical");
