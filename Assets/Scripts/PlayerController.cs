@@ -1,35 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public static int lives = 3;
-    public static int score = 0;
-    
-    public float speed = 0;
-    private Rigidbody rb;
-    private float movementX;
-    private float movementY;
-    
+    public static int score;
+
+    public float speed = 10;
+    private Rigidbody _rb;
+    private Vector3 _move;
+    private float _horizontal;
+    private float _vertical;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    void OnMove(InputValue movementValue) 
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        // Make Reference From Rigidbody
+        _rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        // Store Input From User 
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
+
+        // store Inputs in Vector3
+        _move.x = _horizontal;
+        _move.z = _vertical;
+
+        //Move Player by Add Force
+        _rb.AddForce(_move * speed);
     }
 
     private void OnTriggerEnter(Collider other)
