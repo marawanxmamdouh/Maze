@@ -11,12 +11,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 _move;
     private float _horizontal;
     private float _vertical;
+    
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     private void Start()
     {
         // Make Reference From Rigidbody
         _rb = GetComponent<Rigidbody>();
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             score++;
+            audioSource.Play();
             Debug.Log("Score: " + score);
         }
     }
