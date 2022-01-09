@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static int lives = 3;
-    public static int score = 49;
+    public static int score;
     public static bool canMove = true;
 
     public float speed = 10;
