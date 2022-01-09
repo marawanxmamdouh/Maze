@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class YouWinScreen : MonoBehaviour
 {
+    
+    public GameObject mainMenuScreen;
     public void Setup()
     {
         gameObject.SetActive(true);
@@ -11,6 +13,7 @@ public class YouWinScreen : MonoBehaviour
     public void PlayAgainButton()
     {
         SceneManager.LoadScene("MinGame");
+        mainMenuScreen.SetActive(false);
         PlayerController.lives = 3;
         PlayerController.score = 0;
         PlayerController.canMove = true;
@@ -18,7 +21,8 @@ public class YouWinScreen : MonoBehaviour
     
     public void MainMenuButton()
     {
-        //TODO add main menu
-        SceneManager.LoadScene("GameOver");
+        PlayAgainButton();
+        gameObject.SetActive(false);
+        mainMenuScreen.SetActive(true);
     }
 }

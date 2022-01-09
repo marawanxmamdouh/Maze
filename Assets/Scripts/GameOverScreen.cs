@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
     {
         public Text scoreText;
-
+        public GameObject mainMenuScreen;
         public void Setup(int score)
         {
             gameObject.SetActive(true);
@@ -21,7 +21,8 @@ public class GameOverScreen : MonoBehaviour
         }
         public void MainMenuButton()
         {
-            //TODO add main menu
-            SceneManager.LoadScene("GameOver");
+            RestartButton();
+            gameObject.SetActive(false);
+            mainMenuScreen.SetActive(true);
         }
     }
